@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda en Línea</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Tienda en Línea 🛒 </h1>
+
+    <section class="productos">
+      <h2>Productos disponibles</h2>
+      <label for="productos">Selecciona un producto:</label>
+      <select id="productos">
+        <option value="">Selecciona </option>
+        <option value="101">Arroz $25</option>
+        <option value="102">Frijoles $30</option>
+        <option value="103">Leche $22</option>
+        <option value="104">Pan $18</option>
+        <option value="105">Huevos (12 pzas) $45</option>
+      </select>
+      <button id="btn-agregar" class="btn">Agregar al carrito</button>
+    </section>
+
+    <section id="carrito-section" class="carrito">
+      <h2>Carrito</h2>
+      <table id="tabla-carrito" style="display:none;">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody id="carrito"></tbody>
+      </table>
+      <p id="total" style="display:none;">Total de la compra: $0</p>
+      <button id="btn-comprar" class="btn" style="display:none;">Finalizar compra</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

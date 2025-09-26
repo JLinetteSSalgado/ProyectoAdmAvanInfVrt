@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+    background: url("imagen/plantas.jpg") no-repeat center center fixed;
+    background-size: cover;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9); 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 15px auto;
+    display: block;
+  }
+  
+  .btn:hover {
+    background: #0056b3;
+  }
+  
+  .btn-danger {
+    background: #dc3545;
+  }
+  .btn-danger:hover {
+    background: #a71d2a;
+  }
+  
+  select {
+    margin: 10px auto;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 220px;
+    display: block;
+  }
+  
+  .carrito {
+    text-align: center;
+  }
+  
+  .carrito table {
+    margin: 15px auto;
+    width: 80%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  table th {
+    background-color: #f2f2f2;
+  }
+  
+  .cantidad-btn {
+    padding: 2px 6px;
+    margin: 0 4px;
+    cursor: pointer;
+  }
+  

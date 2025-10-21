@@ -1,0 +1,238 @@
+<header style="text-align: center; margin-bottom: 30px;">
+    <h1>Catálogo de Farmacia e Higiene</h1>
+    <p>Productos esenciales para el cuidado personal y la salud.</p>
+</header>
+
+<div class="product-grid-container">
+
+    <div class="product-card" 
+         data-id="fa-01" 
+         data-name="Analgésico CafiAspirina" 
+         data-price="155.00" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/Analgésicos.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/Analgésicos.jpg') }}" alt="CafiAspirina">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Analgésico CafiAspirina</h3>
+            <p class="product-description">Para alivio rápido de dolores de cabeza y muelas. Caja con 110 tabletas.</p>
+            <p class="product-price">$155.00 / caja</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-02" 
+         data-name="Jarabe VICK 44" 
+         data-price="98.50" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/jarabetos.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/jarabetos.jpg') }}" alt="Jarabe VICK 44">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Jarabe VICK 44</h3>
+            <p class="product-description">Para tos seca y con flemas. Descongestiona y alivia la garganta irritada.</p>
+            <p class="product-price">$98.50 / 120 mL</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-03" 
+         data-name="Agua Oxigenada JALOMA" 
+         data-price="35.00" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/AguaOxigenada.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/AguaOxigenada.jpg') }}" alt="Agua Oxigenada">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Agua Oxigenada JALOMA</h3>
+            <p class="product-description">Antiséptico. Ayuda a evitar la infección y a limpiar heridas superficiales.</p>
+            <p class="product-price">$35.00 / 440 mL</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-04" 
+         data-name="Venda Elástica Quirurgical" 
+         data-price="45.99" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/vendas.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/vendas.jpg') }}" alt="Vendas">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Venda Elástica Quirurgical</h3>
+            <p class="product-description">Venda elástica de compresión premium, ideal para primeros auxilios y esguinces.</p>
+            <p class="product-price">$45.99 / pza</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-05" 
+         data-name="Cepillo Dental Colgate 360°" 
+         data-price="79.90" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/cepillodientes.jgp.jpg') }}">
+        <div class="product-image">
+             <img src="{{ url_for('static', filename='images/farmacia/cepillodientes.jgp.jpg') }}" alt="Cepillo Dental">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Cepillo Dental Colgate 360°</h3>
+            <p class="product-description">Limpieza completa y profunda, remueve placa y limpia entre dientes. Pack de 2.</p>
+            <p class="product-price">$79.90 / pack</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-06" 
+         data-name="Pasta Dental Fluorada" 
+         data-price="42.50" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/pastadientes.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/pastadientes.jpg') }}" alt="Pasta de Dientes">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Pasta Dental Fluorada</h3>
+            <p class="product-description">Crema dental con fluoruro. Ayuda a prevenir caries y refresca el aliento.</p>
+            <p class="product-price">$42.50 / tubo</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-07" 
+         data-name="Hilo Dental G·U·M" 
+         data-price="65.00" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/hilodental.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/hilodental.jpg') }}" alt="Hilo Dental">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Hilo Dental G·U·M</h3>
+            <p class="product-description">Hilo encerado sabor menta. Limpia donde el cepillo no puede llegar. 129 metros.</p>
+            <p class="product-price">$65.00 / pza</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-08" 
+         data-name="Protector Solar Avène SPF 50+" 
+         data-price="499.00" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/protectorsolar.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/protectorsolar.jpg') }}" alt="Protector Solar">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Protector Solar Avène SPF 50+</h3>
+            <p class="product-description">Muy alta protección UVA/UVB/Luz Azul. Invisible finish y 8 horas de hidratación.</p>
+            <p class="product-price">$499.00 / 50 mL</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-09" 
+         data-name="Crema Hidratante Neutrogena" 
+         data-price="230.75" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/cremahidratante.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/cremahidratante.jpg') }}" alt="Crema Hidratante">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Crema Hidratante Neutrogena</h3>
+            <p class="product-description">Gel crema Hydro Boost. Hidratación instantánea y duradera para piel seca/sensible.</p>
+            <p class="product-price">$230.75 / pza</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" 
+         data-id="fa-10" 
+         data-name="Suplemento Proteína WHEY" 
+         data-price="899.90" 
+         data-image-url="{{ url_for('static', filename='images/farmacia/Suplementos.jpg') }}">
+        <div class="product-image">
+            <img src="{{ url_for('static', filename='images/farmacia/Suplementos.jpg') }}" alt="Suplemento Proteína">
+        </div>
+        <div class="product-info">
+            <h3 class="product-name">Suplemento Proteína WHEY</h3>
+            <p class="product-description">Proteína en polvo sabor chocolate. Ideal para recuperación y aumento de masa muscular.</p>
+            <p class="product-price">$899.90 / bote</p>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                    <span class="quantity-display">0</span>
+                    <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="add-to-cart-btn">Agregar</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

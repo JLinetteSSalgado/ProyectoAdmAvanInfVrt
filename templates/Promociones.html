@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperMarket Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<nav class="sidebar" id="sidebar-nav">
+    <a href="#" class="close-btn" id="close-btn">×</a>
+    <ul>
+        <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+        <li><a href="{{ url_for('promociones') }}">Promociones</a></li>
+        <li><a href="{{ url_for('sucursales') }}">Sucursales</a></li>
+        <li><a href="{{ url_for('ayuda') }}">Ayuda</a></li>
+        <li><a href="{{ url_for('login') }}">Opciones</a></li>
+    </ul>
+</nav>
+
+<header class="main-header">
+    <div class="top-bar">
+        
+        <div class="header-left">
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <a href="{{ url_for('home') }}" class="logo-link">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='images/iconoCarrito.png') }}" alt="Logo SuperMarket" class="logo-cart-icon">
+                    <div class="logo-text">
+                        SUPE<span class="green-letter">RMA</span><span class="orange-letter">RKET</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="header-center">
+            <form action="{{ url_for('search') }}" method="get" class="search-container">
+                <input type="text" name="query" placeholder="Busca tus productos aqui" required>
+                <button type="submit">
+                    <img src="{{ url_for('static', filename='images/iconoLupa.png') }}" alt="Buscar">
+                </button>
+            </form>
+        </div>
+        <div class="header-right">
+            <a href="{{ url_for('login') }}" class="user-account" style="text-decoration: none; color: inherit;">
+                <img src="{{ url_for('static', filename='images/iconoSesion.png') }}" alt="Iniciar Sesión">
+                <span>Iniciar sesión</span>
+            </a>
+            <div class="cart-summary">
+                <img src="{{ url_for('static', filename='images/iconoCarrito.png') }}" alt="Carrito de Compras">
+                <span>$0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="{{ url_for('promociones') }}">Promociones</a></li> 
+            <li><a href="{{ url_for('sucursales') }}">Tiendas oficiales</a></li> 
+
+            <li><a href="{{ url_for('category_page', category_name='frutas') }}">Frutas</a></li>
+            <li><a href="{{ url_for('category_page', category_name='verduras') }}">Verduras</a></li> 
+            <li><a href="{{ url_for('category_page', category_name='deportes') }}">Deportes</a></li>
+            <li><a href="{{ url_for('category_page', category_name='tecnologia') }}">Tecnología</a></li>
+            <li><a href="{{ url_for('category_page', category_name='higiene') }}">Higiene</a></li>
+            <li><a href="{{ url_for('category_page', category_name='vinos') }}">Vinos</a></li>
+            <li><a href="{{ url_for('category_page', category_name='carnes') }}">Carnes</a></li>
+            <li><a href="{{ url_for('category_page', category_name='lacteos') }}">Lácteos</a></li>
+            <li><a href="{{ url_for('category_page', category_name='abarrotes') }}">Abarrotes</a></li>
+            <li><a href="{{ url_for('category_page', category_name='cocina') }}">Cocina</a></li>
+            <li><a href="{{ url_for('category_page', category_name='mascotas') }}">Mascotas</a></li>
+            <li><a href="{{ url_for('category_page', category_name='farmacia') }}">Farmacia</a></li>
+            <li><a href="{{ url_for('category_page', category_name='belleza') }}">Belleza</a></li>
+            <li><a href="{{ url_for('category_page', category_name='videojuegos') }}">Videojuegos</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main>
+        <div class="promo-grid-container">
+            <div class="promo-card card-h-1">
+                <img src="{{ url_for('static', filename='images/promociones/horizontal1.jpg') }}" alt="Promoción 1">
+            </div>
+            <div class="promo-card card-v-1">
+                <img src="{{ url_for('static', filename='images/promociones/vertical1.jpg') }}" alt="Promoción 2">
+            </div>
+            <div class="promo-card card-v-2">
+                <img src="{{ url_for('static', filename='images/promociones/vertical2.jpg') }}" alt="Promoción 3">
+            </div>
+            <div class="promo-card card-h-2">
+                <img src="{{ url_for('static', filename='images/promociones/horizontal2.jpg') }}" alt="Promoción 4">
+            </div>
+            <div class="promo-card card-h-3">
+                <img src="{{ url_for('static', filename='images/promociones/horizontal3.jpg') }}" alt="Promoción 5">
+            </div>
+            <div class="promo-card card-h-4">
+                <img src="{{ url_for('static', filename='images/promociones/horizontal4.jpg') }}" alt="Promoción 6">
+            </div>
+            <div class="promo-card card-v-3">
+                <img src="{{ url_for('static', filename='images/promociones/vertical3.jpg') }}" alt="Promoción 7">
+            </div>
+            <div class="promo-card card-v-4">
+                <img src="{{ url_for('static', filename='images/promociones/vertical4.jpg') }}" alt="Promoción 8">
+            </div>
+            <div class="promo-card card-h-5">
+                <img src="{{ url_for('static', filename='images/promociones/horizontal5.jpg') }}" alt="Promoción 9">
+            </div>
+            <div class="promo-card card-v-5">
+                <img src="{{ url_for('static', filename='images/promociones/vertical5.jpg') }}" alt="Promoción 10">
+            </div>
+        </div>
+    </main>
+
+</main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

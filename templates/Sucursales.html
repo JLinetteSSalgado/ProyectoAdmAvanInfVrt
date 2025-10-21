@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucursales - SuperMarket Online</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sucursales.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<nav class="sidebar" id="sidebar-nav">
+    <a href="#" class="close-btn" id="close-btn">×</a>
+    <ul>
+        <li><a href="{{ url_for('login') }}">Iniciar sesión</a></li>
+        <li><a href="{{ url_for('promociones') }}">Promociones</a></li>
+        <li><a href="{{ url_for('sucursales') }}">Sucursales</a></li>
+        <li><a href="{{ url_for('ayuda') }}">Ayuda</a></li>
+        <li><a href="{{ url_for('login') }}">Opciones</a></li>
+    </ul>
+</nav>
+
+<header class="main-header">
+    <div class="top-bar">
+        
+        <div class="header-left">
+            <div class="menu-icon">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <a href="{{ url_for('home') }}" class="logo-link">
+                <div class="logo-container">
+                    <img src="{{ url_for('static', filename='images/iconoCarrito.png') }}" alt="Logo SuperMarket" class="logo-cart-icon">
+                    <div class="logo-text">
+                        SUPE<span class="green-letter">RMA</span><span class="orange-letter">RKET</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="header-center">
+            <form action="{{ url_for('search') }}" method="get" class="search-container">
+                <input type="text" name="query" placeholder="Busca tus productos aqui" required>
+                <button type="submit">
+                    <img src="{{ url_for('static', filename='images/iconoLupa.png') }}" alt="Buscar">
+                </button>
+            </form>
+        </div>
+        <div class="header-right">
+            <a href="{{ url_for('login') }}" class="user-account" style="text-decoration: none; color: inherit;">
+                <img src="{{ url_for('static', filename='images/iconoSesion.png') }}" alt="Iniciar Sesión">
+                <span>Iniciar sesión</span>
+            </a>
+            <div class="cart-summary">
+                <img src="{{ url_for('static', filename='images/iconoCarrito.png') }}" alt="Carrito de Compras">
+                <span>$0.00</span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="{{ url_for('promociones') }}">Promociones</a></li> 
+            <li><a href="{{ url_for('sucursales') }}">Tiendas oficiales</a></li> 
+
+            <li><a href="{{ url_for('category_page', category_name='frutas') }}">Frutas</a></li>
+            <li><a href="{{ url_for('category_page', category_name='verduras') }}">Verduras</a></li> 
+            <li><a href="{{ url_for('category_page', category_name='deportes') }}">Deportes</a></li>
+            <li><a href="{{ url_for('category_page', category_name='tecnologia') }}">Tecnología</a></li>
+            <li><a href="{{ url_for('category_page', category_name='higiene') }}">Higiene</a></li>
+            <li><a href="{{ url_for('category_page', category_name='vinos') }}">Vinos</a></li>
+            <li><a href="{{ url_for('category_page', category_name='carnes') }}">Carnes</a></li>
+            <li><a href="{{ url_for('category_page', category_name='lacteos') }}">Lácteos</a></li>
+            <li><a href="{{ url_for('category_page', category_name='abarrotes') }}">Abarrotes</a></li>
+            <li><a href="{{ url_for('category_page', category_name='cocina') }}">Cocina</a></li>
+            <li><a href="{{ url_for('category_page', category_name='mascotas') }}">Mascotas</a></li>
+            <li><a href="{{ url_for('category_page', category_name='farmacia') }}">Farmacia</a></li>
+            <li><a href="{{ url_for('category_page', category_name='belleza') }}">Belleza</a></li>
+            <li><a href="{{ url_for('category_page', category_name='videojuegos') }}">Videojuegos</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main class="stores-main">
+        
+        <div class="stores-header">
+            <div class="stores-header-content">
+                <h1>Encuentra tu SuperMarket más cercano</h1>
+                <p>Somos más que un supermercado. Somos parte de tu comunidad. Con más de 20 años de experiencia, nos esforzamos por ofrecerte los productos más frescos y la mejor atención, justo a la vuelta de tu esquina.</p>
+                <a href="#store-list" class="cta-button">Ver Sucursales</a>
+            </div>
+        </div>
+
+        <div class="stores-container" id="store-list">
+            <h2>Nuestras Ubicaciones</h2>
+            <div class="store-list-grid">
+                
+                <div class="store-card">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.5785525422775!2d-99.21257622533976!3d18.867454058487517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cddf007ae6777f%3A0x4f9f0eaad86d6ddf!2sEl%20Coyote%20Cojo!5e1!3m2!1ses!2smx!4v1760892817918!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="store-card-content">
+                        <h3>SuperMarket Centro</h3>
+                        <p><i class="fas fa-map-marker-alt"></i>3 de Mayo Av EmilianoZapata</p>
+                        <p><i class="fas fa-phone-alt"></i> (55) 1234-5678</p>
+                        <p><i class="fas fa-clock"></i> Lun-Dom: 7:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3416.9282043123308!2d-99.20331042534013!3d18.850288459020646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdd8bad2a5ef7d%3A0xddfd0f46aac691ee!2sUniversidad%20Tecnol%C3%B3gica%20Emiliano%20Zapata%20UTEZ!5e1!3m2!1ses!2smx!4v1760684742898!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="store-card-content">
+                        <h3>SuperMarket del Valle</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Universidad Tecnologica Emiliano Zapata</p>
+                        <p><i class="fas fa-phone-alt"></i> (55) 8765-4321</p>
+                        <p><i class="fas fa-clock"></i> Lun-Dom: 8:00 AM - 11:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="store-card">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13650.96478378206!2d-99.24723765427444!3d19.054863874334664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cde1874c28fe85%3A0xeb454ec7eb86fdb0!2s62515%20Tres%20Mar%C3%ADas%2C%20Mor.!5e1!3m2!1ses!2smx!4v1760893299700!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="store-card-content">
+                        <h3>SuperMarket Polanco</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Blvd. Inventado 789, Col. Polanco</p>
+                        <p><i class="fas fa-phone-alt"></i> (55) 4567-8901</p>
+                        <p><i class="fas fa-clock"></i> Lun-Dom: 7:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    
+</main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

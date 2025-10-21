@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago Exitoso - SuperMarket Online</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 40px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .success-container h1 {
+            color: #28a745;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .success-container p {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .success-container .home-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .success-container .home-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <h1>¡Pago Exitoso! ✅</h1>
+        <p>Gracias por tu compra, **{{ nombre | default('Cliente') }}**. Tu pedido ha sido procesado correctamente y pronto será enviado.</p>
+        <p>Recibirás un correo electrónico de confirmación con los detalles de tu orden.</p>
+        <a href="{{ url_for('home') }}" class="home-link">Volver al Inicio</a>
+    </div>
+
+    <script>
+        localStorage.removeItem('shoppingCart'); 
+    </script>
+</body>
+</html>

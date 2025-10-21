@@ -1,0 +1,189 @@
+/* static/css/login.css */
+
+/* Estilos para el cuerpo de la página, el contenedor principal */
+body.login-page {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f4; /* Un color de fallback si la imagen no carga */
+    
+    /* --- ESTILOS PARA LA IMAGEN DE FONDO --- */
+    background-image: url("../images/Fondos/InicioSesion2.jpg");
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    min-height: 100vh; /* Asegura que ocupe al menos el alto completo de la ventana */
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+/* Contenedor principal del formulario y el mensaje de bienvenida */
+.login-page-container {
+    display: flex; /* Usamos flexbox para el layout de dos columnas */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para que se vea la imagen */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Asegura que las esquinas redondeadas se apliquen a todo */
+    max-width: 900px; /* Ancho máximo para el contenedor de toda la página de login */
+    width: 90%; /* Ancho responsivo */
+}
+
+/* Sección de bienvenida (izquierda) */
+.welcome-section {
+    flex: 1; /* Ocupa el espacio restante */
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo más oscuro para el texto */
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.welcome-section h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.welcome-section p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* Iconos de redes sociales */
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    margin-right: 15px;
+    text-decoration: none;
+}
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+/* Sección del formulario (derecha) */
+.login-form-section {
+    flex: 1; /* Ocupa el espacio restante */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente para el formulario */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+.login-form-section h2 {
+    font-size: 2em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #f9f9f9;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    justify-content: flex-start; /* Alinea a la izquierda */
+    color: #555;
+    font-size: 0.9em;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f58220; /* Color naranja (del logo) */
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.login-button:hover {
+    background-color: #e07218; /* Naranja más oscuro al pasar el mouse */
+}
+
+.forgot-password, .terms-links {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 15px;
+}
+
+.forgot-password a, .terms-links a {
+    color: #0033a0; /* Color azul (del header) */
+    text-decoration: none;
+}
+.forgot-password a:hover, .terms-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .login-page-container {
+        flex-direction: column; /* Apila las secciones en pantallas pequeñas */
+        width: 95%;
+    }
+    .welcome-section {
+        padding: 30px;
+        text-align: center;
+    }
+    .login-form-section {
+        padding: 30px;
+    }
+    .welcome-section h1 {
+        font-size: 2em;
+    }
+}
+/* ===== ESTILO PARA EL BOTÓN "VOLVER AL INICIO" ===== */
+.back-to-home {
+    margin-top: 25px; /* Más espacio para separarlo de los términos */
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+.back-to-home a {
+    color: #555; /* Color de texto sutil */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.back-to-home a:hover {
+    color: #0033a0; /* Azul principal al pasar el mouse */
+}
+
+/* Estilo para el icono de flecha */
+.back-to-home a i {
+    margin-right: 6px;
+}

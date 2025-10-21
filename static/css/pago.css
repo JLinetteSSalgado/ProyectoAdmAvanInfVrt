@@ -1,0 +1,149 @@
+/* Estilos para el contenedor de la página de pago */
+.payment-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.payment-grid {
+    display: grid;
+    /* Divide la vista: 1 parte para el resumen, 1.5 para el formulario */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Estilos para la sección de resumen del carrito */
+.cart-summary-checkout {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    height: fit-content; /* Se ajusta a la altura del contenido */
+}
+
+.cart-summary-checkout h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.checkout-cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+    font-size: 0.95em;
+}
+
+.cart-total-checkout {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #333;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Estilos para el formulario de pago */
+.payment-form-section {
+    padding: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 1em;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-inline .form-group {
+    flex: 1;
+}
+
+/* --- ESTILO DEL BOTÓN DE PAGO MEJORADO --- */
+.btn-pagar {
+    /* Gradiente moderno de azul a morado */
+    background: linear-gradient(135deg, #4F46E5 0%, #A855F7 100%); 
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    /* Mayor redondeo */
+    border-radius: 8px; 
+    font-size: 1.3em;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase; /* Para que se vea más impactante */
+    letter-spacing: 0.5px;
+    
+    /* Sombra profunda y colorida */
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-pagar:hover {
+    /* Cambio sutil de gradiente en hover */
+    background: linear-gradient(135deg, #A855F7 0%, #4F46E5 100%);
+    /* Ligeramente elevado */
+    transform: translateY(-3px); 
+    /* Sombra más intensa */
+    box-shadow: 0 15px 25px rgba(168, 85, 247, 0.6); 
+}
+
+.btn-pagar:active {
+    /* Efecto de hundimiento */
+    transform: translateY(0); 
+    box-shadow: 0 5px 10px rgba(79, 70, 229, 0.4);
+}
+/* ------------------------------------- */
+
+/* Estilo para el botón Pagar en el carrito (index/category_page) */
+.checkout-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    margin-top: 15px;
+    background-color: #007bff; /* Azul primario */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsivo básico */
+@media (max-width: 800px) {
+    .payment-grid {
+        grid-template-columns: 1fr;
+    }
+}

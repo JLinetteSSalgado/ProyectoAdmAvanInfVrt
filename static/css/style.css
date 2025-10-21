@@ -1,0 +1,720 @@
+/* --- Reseteo Básico y Estilos Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* --- Barra Superior (Azul) --- */
+/* --- Barra Superior (CON IMAGEN DE FONDO) --- */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    color: white;
+    gap: 20px;
+
+    /* --- 1. La Imagen de Fondo --- */
+    /* Asegúrate que la ruta y el nombre del archivo sean correctos */
+    background-image: url("../images/fondos/InicioSesion2.jpg");
+    background-size: cover; /* La imagen cubre todo el espacio */
+    background-position: center 40%; /* Muestra una parte más alta de la imagen */
+    position: relative; /* Necesario para que la capa oscura funcione */
+    z-index: 1; /* Para que esté por encima de la capa oscura */
+}
+
+/* --- 2. La Capa Oscura (Overlay) --- */
+/* Esto crea una capa semitransparente entre la imagen y el contenido */
+.top-bar::before {
+    content: ''; /* Requerido para que se muestre el pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 40, 120, 0.6); /* Un azul oscuro con 60% de opacidad */
+    z-index: -1; /* Se pone DETRÁS del contenido del header */
+}
+/*----------------------------------------------------------------------------------------------------------------------------------------------------
+/* --- SECCIÓN IZQUIERDA --- */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espacio entre el menú y el logo */
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-cart-icon {
+    height: 45px;
+}
+
+.logo-text {
+    font-size: 2em; /* Reducimos un poco el tamaño */
+    font-weight: 800; /* Letra más gruesa */
+    letter-spacing: -1.5px; /* Juntamos un poco las letras */
+}
+.logo-text .black-letter {
+    color: #000000;
+}
+.logo-text .green-letter {
+    color: #00a651;
+}
+
+.logo-text .orange-letter {
+    color: #f58220;
+}
+
+/* --- SECCIÓN CENTRAL --- */
+.header-center {
+    flex-grow: 1; /* Permite que esta sección ocupe el espacio disponible */
+    display: flex;
+    justify-content: center; /* Centra el contenido (la barra de búsqueda) */
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px;
+    width: 100%;
+    max-width: 600px; /* Ancho máximo para la barra */
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    font-size: 1em;
+    width: 100%;
+    background: transparent;
+}
+
+.search-container button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.search-container button img {
+    height: 22px;
+}
+
+/* --- SECCIÓN DERECHA --- */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espacio entre "Iniciar sesión" y el carrito */
+}
+
+.user-account, .cart-summary {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.user-account img, .cart-summary img {
+    height: 30px;
+}
+
+/* --- Barra de Navegación (Gris) --- */
+.nav-bar {
+    background-color: #f0f2f5;
+    border-bottom: 1px solid #d1d7dc;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    gap: 35px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.nav-bar ul li a:hover {
+    color: #0033a0;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------------- */
+/* --- SECCIÓN DE PROMOCIONES --- */
+
+main {
+    padding: 20px; /* Espaciado general para la sección principal */
+    max-width: 1400px; /* Ancho máximo para que no se extienda demasiado en pantallas grandes */
+    margin: 0 auto; /* Centra el contenido principal */
+}
+
+.promo-grid-container {
+    display: grid;
+    /* Creamos un grid de 4 columnas de tamaño flexible */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Espacio entre cada tarjeta de promoción */
+}
+
+.promo-card {
+    border-radius: 16px; /* Bordes redondeados modernos */
+    overflow: hidden; /* Oculta las partes de la imagen que se salgan */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.promo-card:hover {
+    transform: scale(1.03); /* Efecto de zoom al pasar el mouse */
+}
+
+.promo-card img {
+    width: 100%;
+    height: 100%;
+    /* La propiedad más importante: hace que la imagen llene el contenedor sin deformarse */
+    object-fit: cover; 
+    display: block;
+}
+
+
+/* --- Definición del tamaño de cada tarjeta en el Grid --- */
+
+/* Imagen Horizontal 1 (la más grande) */
+.card-h-1 {
+    grid-column: span 2; /* Ocupa 2 columnas de ancho */
+    grid-row: span 2;    /* Ocupa 2 filas de alto */
+}
+
+/* Imágenes Verticales 1 y 2 (altas y delgadas) */
+.card-v-1, .card-v-2 {
+    grid-row: span 2; /* Ocupan 2 filas de alto */
+}
+
+/* Imágenes Horizontales 2 y 3 (anchas) */
+.card-h-2, .card-h-3 {
+    grid-column: span 2; /* Ocupan 2 columnas de ancho */
+}
+
+/* Imagen Vertical 3 */
+.card-v-3 {
+    grid-row: span 2; /* Ocupa 2 filas de alto */
+}
+
+/* El resto de imágenes ocuparán el espacio que les toque por defecto (1x1) */
+/* --- ESTILOS PARA EL MENÚ LATERAL (SIDEBAR) --- */
+
+/* El fondo oscuro que cubre la página */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Negro semitransparente */
+    z-index: 999; /* Asegura que esté por encima del contenido pero debajo del menú */
+    opacity: 0; /* Oculto por defecto */
+    visibility: hidden; /* Completamente inaccesible */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* El menú lateral */
+.sidebar {
+    position: fixed; /* Se queda fijo en la pantalla aunque hagas scroll */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px; /* Ancho del menú */
+    background-color: #002a80; /* Un poco más oscuro que la barra superior */
+    z-index: 1000; /* Se asegura que esté por encima de todo */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    /* La magia para ocultarlo */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Clase que se añadirá con JavaScript para mostrar el menú */
+.sidebar.active {
+    transform: translateX(0);
+}
+
+/* Botón para cerrar (la 'X') */
+.sidebar .close-btn {
+    color: white;
+    font-size: 3em;
+    text-decoration: none;
+    align-self: flex-end; /* Lo alinea a la derecha */
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+/* Estilos de los enlaces del menú */
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 500;
+    display: block;
+    padding: 15px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #0033a0; /* El mismo azul de la barra superior */
+}
+/* --- ESTILOS PARA LA BARRA BLANCA EN EL LOGIN --- */
+
+/* 1. Cambiamos el fondo de la barra superior */
+.login-body-styling .top-bar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0; /* Una línea sutil para separarla */
+}
+
+/* 2. Cambiamos el color de las barras del menú hamburguesa */
+.login-body-styling .menu-icon .bar {
+    background-color: #333; /* Color oscuro */
+}
+
+/* 3. Cambiamos el color del texto del logo */
+.login-body-styling .logo-text {
+    color: #000; /* Texto principal oscuro */
+}
+/* Mantenemos los colores de las letras especiales */
+.login-body-styling .logo-text .green-letter { color: #00a651; }
+.login-body-styling .logo-text .orange-letter { color: #f58220; }
+
+/* 4. Cambiamos el color del texto de "Iniciar Sesión" y "Carrito" */
+.login-body-styling .user-account span,
+.login-body-styling .cart-summary span {
+    color: #333;
+}
+
+/* 5. Invertimos los iconos blancos para que se vean negros */
+.login-body-styling .logo-cart-icon,
+.login-body-styling .user-account img,
+.login-body-styling .cart-summary img {
+    filter: invert(1);
+}
+/* --- Estilo para el enlace del logo --- */
+.logo-link {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Hereda el color del texto (blanco o negro) */
+}
+/* --- ESTILOS PARA LAS TARJETAS DE PRODUCTO --- */
+
+/* La rejilla que contiene todas las tarjetas */
+.product-grid-container {
+    display: grid;
+    /* Esto hace que sea responsivo:
+       - Columnas automáticas
+       - Cada columna mide mínimo 250px
+       - Ocupan el espacio disponible (1fr)
+    */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px; /* Espacio entre las tarjetas */
+}
+
+/* La tarjeta individual */
+.product-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Para que la imagen respete los bordes redondeados */
+    display: flex;
+    flex-direction: column; /* Apila la imagen encima de la info */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Efecto de "levantar" la tarjeta */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* El "cuadrado" de la imagen */
+.product-image {
+    width: 100%;
+    height: 200px; /* Altura fija para todas las imágenes */
+    background-color: #f9f9f9; /* Color por si la imagen no carga */
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* La imagen se ajusta DENTRO del espacio */
+    display: block;
+}
+
+
+/* Contenedor para el texto */
+.product-info {
+    padding: 15px 20px;
+    flex-grow: 1; /* Asegura que la info ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.product-price {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #00a651; /* Verde de tu logo */
+    margin-bottom: 15px;
+}
+
+/* Contenedor para los botones de abajo */
+.product-actions {
+    display: flex;
+    justify-content: space-between; /* Pone los botones en extremos opuestos */
+    align-items: center;
+    margin-top: auto; /* Empuja esta sección al fondo de la tarjeta */
+}
+
+/* Estilo para el selector de cantidad (+ 0 -) */
+.quantity-selector {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: #f0f2f5;
+    border: 1px solid #e0e0e0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%; /* Botones redondos */
+    cursor: pointer;
+    font-size: 1em;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.quantity-display {
+    margin: 0 12px;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+/* Botón de "Agregar" */
+.add-to-cart-btn {
+    background-color: #f58220; /* Naranja de tu logo */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e07218; /* Naranja más oscuro */
+}
+
+/* --- ESTILOS PARA LA PÁGINA "PRÓXIMAMENTE" --- */
+
+/* Contenedor principal del mensaje */
+.coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+    margin: 40px auto; /* Centra la tarjeta y le da espacio arriba/abajo */
+    max-width: 800px; /* Ancho máximo para que no ocupe toda la pantalla */
+    color: #555; /* Color de texto general */
+}
+
+/* Icono de herramientas */
+.coming-soon-container .icon {
+    font-size: 4em; /* Tamaño grande */
+    color: #f58220; /* Naranja de tu marca */
+    margin-bottom: 25px;
+}
+
+/* Título principal */
+.coming-soon-container h2 {
+    font-size: 2.2em;
+    color: #0033a0; /* Azul de tu marca */
+    margin-bottom: 15px;
+}
+
+/* Párrafo descriptivo */
+.coming-soon-container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 500px; /* Evita que el texto sea demasiado ancho */
+}
+
+
+/* --- ESTILOS PARA LA LISTA DEL CARRITO --- */
+
+.section-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.shopping-cart-section {
+    margin-top: 50px; /* Espacio entre los productos y el carrito */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-name {
+    font-size: 1.1em;
+    color: #555;
+    font-weight: 500;
+}
+
+.cart-item-price {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+}
+
+.cart-empty-message {
+    text-align: center;
+    font-size: 1.1em;
+    color: #888;
+    padding: 20px 0;
+}
+
+.cart-total-section {
+    display: flex;
+    justify-content: flex-end; /* Alinea el total a la derecha */
+    align-items: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #0033a0; /* Azul principal */
+}
+
+.cart-total-section strong {
+    margin-right: 15px;
+    font-weight: 600;
+    color: #333;
+}
+/* --- ESTILOS PARA LAYOUT CON CARRITO LATERAL --- */
+
+/* 1. Contenedor principal (<main>) */
+.main-container {
+    display: flex; /* Usamos Flexbox */
+    align-items: flex-start; /* Alinea los items arriba */
+    gap: 30px; /* Espacio entre contenido y carrito */
+    padding: 20px;
+    max-width: 1600px; /* Puedes ajustar el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* 2. Área de contenido principal (productos) */
+.content-area {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    /* Puedes añadir un ancho máximo si quieres que no sea demasiado ancho */
+    /* max-width: 1100px; */ 
+}
+
+/* 3. Sección del carrito (barra lateral) */
+.shopping-cart-section {
+    width: 350px; /* Ancho fijo para el carrito */
+    flex-shrink: 0; /* Evita que se encoja */
+    
+    /* --- La Magia para que se quede fijo --- */
+    position: sticky; /* Se pega al hacer scroll */
+    top: 20px; /* Distancia desde la parte superior al pegarse */
+    /* --- Fin de la Magia --- */
+
+    /* Reutilizamos estilos, pero ajustamos márgenes */
+    margin-top: 0; /* Quitamos el margen superior que tenía antes */
+    background-color: #ffffff;
+    padding: 20px; /* Un poco menos de padding */
+    border-radius: 8px; /* Bordes menos redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
+    /* Para que el contenido interno no se desborde si es muy largo */
+    max-height: calc(100vh - 40px); /* Altura máxima (menos el 'top' y algo de margen) */
+    overflow-y: auto; /* Scroll vertical si el contenido es más alto */
+}
+
+/* Ajustes menores para el contenido del carrito */
+.shopping-cart-section .section-title {
+    font-size: 1.5em; /* Título un poco más pequeño */
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom-width: 1px; /* Línea más fina */
+}
+
+.cart-item {
+    padding: 10px 0; /* Menos padding vertical */
+}
+
+.cart-total-section {
+    font-size: 1.2em; /* Total un poco más pequeño */
+    margin-top: 15px;
+}
+
+.cart-checkout-section {
+    margin-top: 20px;
+}
+
+.checkout-btn { /* Estilos básicos para el botón Pagar */
+    display: block; /* Ocupa todo el ancho */
+    width: 100%;
+    padding: 12px;
+    background-color: #f58220; /* Naranja */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #e07218; /* Naranja más oscuro */
+}
+
+/* --- Media Query para pantallas pequeñas (opcional) --- */
+/* En pantallas de menos de 900px, vuelve al layout original (carrito abajo) */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column; /* Apila los elementos */
+    }
+
+    .shopping-cart-section {
+        width: 100%; /* Ocupa todo el ancho */
+        position: static; /* Ya no es sticky */
+        margin-top: 40px; /* Le devolvemos un margen superior */
+        max-height: none; /* Quitamos la altura máxima */
+        overflow-y: visible; /* Quitamos el scroll */
+    }
+}
+/* --- ESTILOS ADICIONALES PARA CARRITO LATERAL --- */
+
+.cart-item {
+    display: flex;
+    align-items: center; /* Centra verticalmente imagen, texto y botón */
+    gap: 15px; /* Espacio entre elementos */
+    padding: 12px 0; /* Ajusta el padding si es necesario */
+}
+
+.cart-item-image {
+    width: 50px; /* Tamaño de la imagen */
+    height: 50px;
+    object-fit: contain; /* Asegura que la imagen se vea completa */
+    border-radius: 4px; /* Bordes redondeados suaves */
+    border: 1px solid #eee; /* Borde sutil */
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+
+.cart-item-details {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    display: flex;
+    flex-direction: column; /* Apila nombre y precio */
+}
+
+.cart-item-name {
+    font-size: 0.95em; /* Ajusta tamaño si es necesario */
+    font-weight: 500;
+    color: #444;
+    margin-bottom: 3px; /* Pequeño espacio bajo el nombre */
+}
+
+.cart-item-price {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.cart-item-remove {
+    background-color: #f8f9fa; /* Fondo gris claro */
+    color: #888; /* Color del icono 'x' */
+    border: 1px solid #dee2e6; /* Borde sutil */
+    border-radius: 50%; /* Círculo perfecto */
+    width: 28px;
+    height: 28px;
+    font-size: 1.2em; /* Tamaño de la 'x' */
+    font-weight: bold;
+    line-height: 1; /* Centra la 'x' verticalmente */
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    padding: 0; /* Quita padding extra */
+    flex-shrink: 0; /* Evita que el botón se encoja */
+}
+
+.cart-item-remove:hover {
+    background-color: #e53e3e; /* Rojo al pasar el mouse */
+    color: white;
+    border-color: #e53e3e;
+}

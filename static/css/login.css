@@ -8,7 +8,7 @@ body.login-page {
     background-color: #f4f4f4; /* Un color de fallback si la imagen no carga */
     
     /* --- ESTILOS PARA LA IMAGEN DE FONDO --- */
-    background-image: url("../images/Fondos/InicioSesion2.jpg");
+    background-image: url("../images/fondos/iniciosesion2.jpg");
     background-size: cover; /* Asegura que la imagen cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -186,4 +186,27 @@ body.login-page {
 /* Estilo para el icono de flecha */
 .back-to-home a i {
     margin-right: 6px;
+}
+/* --- ESTO ARREGLA EL DISEÑO EN CELULARES --- */
+@media (max-width: 768px) {
+    /* 1. Hace que las columnas se pongan una debajo de otra */
+    .checkout-wrapper, .payment-grid {
+        display: block !important; /* Rompe el grid */
+        grid-template-columns: 1fr !important;
+    }
+
+    /* 2. Le da espacio a las cajas para que no se peguen a los bordes */
+    .checkout-card, .cart-summary-checkout, .payment-methods {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    /* 3. Ajusta el contenedor principal */
+    .payment-container, .checkout-wrapper {
+        padding: 0 15px;
+        margin-top: 20px;
+    }
+
+    /* 4. Oculta la barra de búsqueda para limpiar la vista en móvil */
+    .header-center { display: none; }
 }
